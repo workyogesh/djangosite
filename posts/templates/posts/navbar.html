@@ -1,0 +1,27 @@
+
+{% block navbar %}
+
+
+
+	<div class="navbar navbar-inverse justify-content-between">
+		<nav class="nav d-flex justify-content-between">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand navname" href="#">Linuxwalls</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li ><a href="/">Home</a></li>
+					<li><a href="{% url 'post_list' %}">Posts</a></li>
+					<li><a href="{% url 'forum_list' %}">Forum</a></li>
+					<li><a href="{% url 'contact_page' %}">Contact Us</a></li>
+				</ul>
+				<form class="navbar-form navbar-right" action="/action_page.php">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-outline-success">Submit</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+{% endblock %}
