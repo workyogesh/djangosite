@@ -25,7 +25,7 @@ SECRET_KEY = 's04+msoj+p*-mpestyji0nrw%24-#cee0x%8cpe8-yemfxjaay'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','ec2-18-221-63-95.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -76,9 +76,16 @@ WSGI_APPLICATION = 'linuxwalls.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'jangodb',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': 'jangogre',
+        'PASSWORD': 'goingon',
+        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',
+
     }
 }
 
@@ -118,8 +125,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+STATIC_ROOT = '/home/ec2-user/djangoapp/secondvir/blogs/djnagosite/linuxwalls/static/'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+#STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL= '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = '/home/ec2-user/djangoapp/secondvir/blogs/djnagosite/linuxwalls/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR,'media')

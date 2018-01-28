@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils import timezone
 
+class Category(models.Model):
+	name = models.CharField(max_length=200)
+	def __str__(self):
+		return self.name
 
 class Post(models.Model):
 	title = models.CharField(max_length=200)
@@ -26,10 +30,6 @@ class Contact(models.Model):
 	def __str__(self):
 		return self.name
 
-class Category(models.Model):
-	name = models.CharField(max_length=200)
-	def __str__(self):
-		return self.name
 	
 class Forum(models.Model):
 	title = models.CharField(max_length=200)
